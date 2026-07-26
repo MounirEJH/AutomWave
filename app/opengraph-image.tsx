@@ -1,35 +1,40 @@
 import { ImageResponse } from "next/og";
 
 export const alt = "AutomWave · Diseño web y automatización en Barcelona";
-export const size = { width: 1200, height: 630 };
+
+export const size = {
+  width: 1200,
+  height: 630,
+};
+
 export const contentType = "image/png";
 
 /**
- * Dynamically generated social preview image (no static asset needed).
+ * Dynamically generated social preview image.
  */
 export default function OpengraphImage() {
   return new ImageResponse(
     (
       <div
         style={{
-          height: "100%",
-          width: "100%",
+          width: "1200px",
+          height: "630px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           padding: "90px",
           background:
-            "linear-gradient(150deg,#0a1613,#0f2a22 55%,#123a2e)",
-          color: "#fff",
-          fontFamily: "sans-serif",
+            "linear-gradient(150deg, #0a1613, #0f2a22 55%, #123a2e)",
+          color: "#ffffff",
+          fontFamily: "Arial, sans-serif",
         }}
       >
-        {/* Logo + Brand */}
+        {/* Logo section */}
         <div
           style={{
             display: "flex",
+            flexDirection: "row",
             alignItems: "center",
-            gap: 20,
             marginBottom: 40,
           }}
         >
@@ -40,12 +45,14 @@ export default function OpengraphImage() {
               borderRadius: 16,
               background: "#0a1613",
               border: "2px solid #0ea47f",
+              display: "flex",
             }}
           />
 
           <div
             style={{
               display: "flex",
+              marginLeft: 20,
               fontSize: 34,
               fontWeight: 700,
             }}
@@ -54,27 +61,17 @@ export default function OpengraphImage() {
           </div>
         </div>
 
-        {/* Main headline */}
+        {/* Main title */}
         <div
           style={{
             display: "flex",
             fontSize: 68,
             fontWeight: 700,
-            lineHeight: 1.05,
-            letterSpacing: "-0.03em",
+            lineHeight: 1.1,
             maxWidth: 900,
           }}
         >
-          Tu negocio, funcionando{" "}
-          <span
-            style={{
-              display: "flex",
-              color: "#7fd9c1",
-            }}
-          >
-            solo
-          </span>{" "}
-          mientras tú creces.
+          Tu negocio, funcionando solo mientras tú creces.
         </div>
 
         {/* Subtitle */}
@@ -83,16 +80,28 @@ export default function OpengraphImage() {
             display: "flex",
             marginTop: 36,
             fontSize: 30,
-            color: "rgba(255,255,255,0.72)",
+            color: "#b8d8d0",
           }}
         >
           Diseño web y automatización · Barcelona
         </div>
+
+        {/* Bottom brand */}
+        <div
+          style={{
+            display: "flex",
+            marginTop: 60,
+            fontSize: 22,
+            color: "#7fd9c1",
+          }}
+        >
+          AUTOMWAVE.COM
+        </div>
       </div>
     ),
     {
-      width: size.width,
-      height: size.height,
+      width: 1200,
+      height: 630,
     }
   );
 }
