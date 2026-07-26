@@ -1,0 +1,83 @@
+@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    min-width: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+    letter-spacing: -0.011em;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  ::selection {
+    @apply bg-accent text-white;
+  }
+  :focus-visible {
+    outline: 2px solid #0ea47f;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  h1, h2, h3 {
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  /* Section vertical rhythm — heavy, deliberate whitespace. */
+  .section-y {
+    padding-block: clamp(4.5rem, 9vw, 8rem);
+  }
+  /* Content container. */
+  .container-x {
+    @apply mx-auto max-w-content;
+    padding-inline: clamp(1.25rem, 5vw, 2rem);
+  }
+  /* Gradient headline treatment. */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-deep via-accent to-accent-soft bg-clip-text text-transparent;
+  }
+  /* Small mono eyebrow. */
+  .eyebrow {
+    @apply font-mono text-[0.72rem] font-bold uppercase tracking-[0.26em] text-accent-text;
+  }
+
+  /* Ambient mesh — fixed, GPU-safe, decorative. */
+  .atmosphere {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .atmosphere::before,
+  .atmosphere::after {
+    content: "";
+    position: absolute;
+    filter: blur(20px);
+  }
+  .atmosphere::before {
+    top: -10%;
+    right: -15%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(14, 164, 127, 0.1), transparent 62%);
+  }
+  .atmosphere::after {
+    bottom: -20%;
+    left: -10%;
+    width: 55vw;
+    height: 55vw;
+    background: radial-gradient(circle, rgba(127, 217, 193, 0.14), transparent 60%);
+  }
+}

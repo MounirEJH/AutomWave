@@ -1,0 +1,48 @@
+import { ImageResponse } from "next/og";
+import { siteConfig } from "@/config/site";
+
+export const alt = "AutomWave · Diseño web y automatización en Barcelona";
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+
+/** Dynamically generated social preview image (no static asset needed). */
+export default function OpengraphImage() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "90px",
+          background: "linear-gradient(150deg,#0a1613,#0f2a22 55%,#123a2e)",
+          color: "#fff",
+          fontFamily: "sans-serif",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 40 }}>
+          <div
+            style={{
+              width: 56,
+              height: 56,
+              borderRadius: 16,
+              background: "#0a1613",
+              border: "2px solid #0ea47f",
+            }}
+          />
+          <div style={{ fontSize: 34, fontWeight: 700 }}>AutomWave</div>
+        </div>
+        <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.03em", maxWidth: 900 }}>
+          Tu negocio, funcionando{" "}
+          <span style={{ color: "#7fd9c1" }}>solo</span> mientras tú creces.
+        </div>
+        <div style={{ marginTop: 36, fontSize: 30, color: "rgba(255,255,255,0.72)" }}>
+          Diseño web y automatización · Barcelona
+        </div>
+      </div>
+    ),
+    { ...size }
+  );
+}

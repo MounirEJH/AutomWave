@@ -1,0 +1,10 @@
+/* Raw CSS custom properties for values used outside Tailwind utilities
+   (e.g. the canvas / ambient effects). Tailwind config remains the source
+   of truth for utility-driven styling. */
+:root {
+  --accent: #0ea47f;
+  --accent-deep: #06503f;
+  --accent-soft: #7fd9c1;
+  --accent-glow: rgba(14, 164, 127, 0.22);
+  --ease-smooth: cubic-bezier(0.32, 0.72, 0, 1);
+}
