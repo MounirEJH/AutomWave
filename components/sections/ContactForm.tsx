@@ -10,7 +10,6 @@ const inputBase =
   "w-full rounded-soft border border-white/15 bg-white/[0.06] px-4 py-3 text-[0.95rem] text-white " +
   "placeholder:text-white/40 outline-none transition-colors duration-300 ease-smooth " +
   "focus:border-accent-soft focus:bg-white/[0.09]";
-
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
